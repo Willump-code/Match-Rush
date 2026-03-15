@@ -1,0 +1,16 @@
+html{
+    font-family: "Balsamiq Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: $text-color1;
+    background-color: $back-color1;
+}
+a{
+    color: $text-color1;
+}
+.container{
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
