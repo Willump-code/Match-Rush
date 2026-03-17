@@ -4,6 +4,10 @@ html{
     font-weight: 400;
     color: $text-color1;
     background-color: $back-color1;
+    overflow: hidden;
+}
+body{
+    overflow: hidden;
 }
 a{
     color: $text-color1;
@@ -14,3 +18,4 @@ a{
     margin: 0 auto;
     padding: 0 15px;
 }
+

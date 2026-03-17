@@ -1,4 +1,9 @@
 <template>
     <MyHeader></MyHeader>
-    <NuxtPage></NuxtPage>
+    <main class="main">
+        <div class="container">
+            <NuxtPage></NuxtPage>
+        </div>
+    </main>
+    <HamburgerMenu></HamburgerMenu>
 </template>

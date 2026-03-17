@@ -8,14 +8,23 @@
                         <span>MatchRush</span>
                     </div>
                 </NuxtLink>
-                <MyNav></MyNav>
+                <MyNav 
+                class="header__nav" 
+                :link-color="'$text-color1'" 
+                :flex-direction="'row'"
+                :align-items="'center'"
+                >
+                </MyNav>
+                <div @click="hamburgerMenu.isOpen = true" class="header__hamburger-btn">
+                    <img src="@/assets/img/hamburger-btn.png" alt="">
+                </div>
             </div>
         </div>
     </header>
 </template>
 
 <script setup lang="ts">
-
+    const hamburgerMenu = useHamburgerMenu()
 </script>
 
 <style scoped lang="scss">
@@ -44,6 +53,19 @@
                     font-weight: 700;
                 }
             }
+        }
+        &__hamburger-btn{
+            display: none;
+            width: 48px;
+            height: 48px;
+        }
+    }
+    @media(max-width: 767px){
+        .header__nav{
+            display: none;
+        }
+        .header__hamburger-btn{
+            display: block;
         }
     }
 </style>
