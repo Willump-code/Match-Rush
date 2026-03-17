@@ -59,8 +59,8 @@
 
         &__close{
             position: absolute;
-            right: 20px;
-            top: 20px;
+            right: 22px;
+            top: 22px;
             width: 32px;
             height: 32px;
         }

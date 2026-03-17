@@ -8,6 +8,7 @@ html{
 }
 body{
     overflow: hidden;
+    height: 100vh;
 }
 a{
     color: $text-color1;
@@ -18,4 +19,12 @@ a{
     margin: 0 auto;
     padding: 0 15px;
 }
-
+.title{
+    text-align: center;
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+}
+.description{
+    color: $text-color3;
+    text-align: center;
+    font-size: clamp(1.05rem, 2.5vw, 1.6rem);
+}
