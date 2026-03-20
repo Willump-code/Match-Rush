@@ -5,15 +5,15 @@ export default defineAppConfig({
             nameTab: 'Главная',
         },
         {
-            idPage: 'tasks',
+            idPage: '/tasks',
             nameTab: 'Задачи',
         },
         {
-            idPage: 'achieves',
+            idPage: '/achieves',
             nameTab: 'Достижения',
         },
         {
-            idPage: 'about',
+            idPage: '/about',
             nameTab: 'Обо мне',
         },
     ]

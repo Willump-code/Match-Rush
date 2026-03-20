@@ -7,7 +7,7 @@
             Улучшай навыки арифметики, алгебры и логики с MatchRush! Тренируй скорость, точность и решай задачи онлайн в удобном формате.
         </h3>
         <div class="home__btn-wrap">
-            <SecondaryBtn @click="$router.push('/tasks')" class="home__btn">Решать</SecondaryBtn>
+            <SecondaryBtn :size="'L'" @click="$router.push('/tasks')" class="home__btn">Решать</SecondaryBtn>
         </div>
     </PageWrap>
 </template>

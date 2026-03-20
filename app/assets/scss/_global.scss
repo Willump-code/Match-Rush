@@ -4,14 +4,13 @@ html{
     font-weight: 400;
     color: $text-color1;
     background-color: $back-color1;
-    overflow: hidden;
-}
-body{
-    overflow: hidden;
-    height: 100vh;
 }
 a{
     color: $text-color1;
+}
+.global-wrap{
+    overflow: hidden;
+    min-height: 100vh;
 }
 .container{
     width: 100%;
@@ -21,10 +20,10 @@ a{
 }
 .title{
     text-align: center;
-    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
 }
 .description{
     color: $text-color3;
     text-align: center;
-    font-size: clamp(1.05rem, 2.5vw, 1.6rem);
+    font-size: clamp(1.3rem, 2.6vw, 1.7rem);
 }
