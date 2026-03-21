@@ -22,9 +22,16 @@ const answer = ref();
 const props = defineProps<{
     correctAnswer: string;
 }>();
+const emit = defineEmits<{
+    (e: "giveAnswer", isCorrect: boolean): void;
+}>();
 function giveAnswer() {
-    if (answer.value == Number(props.correctAnswer)) {
-        alert("Это сообщение!");
+    console.log(answer.value, props.correctAnswer);
+    if (answer.value === Number(props.correctAnswer)) {
+        answer.value = "";
+        emit("giveAnswer", true);
+    } else {
+        emit("giveAnswer", false);
     }
 }
 </script>
@@ -47,6 +54,21 @@ function giveAnswer() {
         flex: 1;
         padding: 0.5rem;
         font-size: 2rem;
+    }
+}
+@media (max-width: 767px) {
+    .answer {
+        padding: 1.2rem;
+    }
+    .answer__form-wrap {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    .answer__input {
+        font-size: 1.2rem;
+    }
+    .answer__btn {
+        width: 100%;
     }
 }
 </style>

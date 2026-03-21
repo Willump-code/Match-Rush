@@ -17,10 +17,10 @@ const props = defineProps<{
     border: 3px solid $text-color1;
     color: $text-color1;
     border-radius: 1.2rem;
-    transition: all 0.2s;
+    transition: all 0.3s;
 
     &:hover {
-        transform: scale(1.1);
+        box-shadow: 0px 0 17px 0 rgba(0, 0, 0, 0.4);
     }
     &.S {
         font-size: clamp(0.85rem, 1.8vw, 1.1rem);
