@@ -60,6 +60,7 @@ function giveAnswer() {
 @media (max-width: 767px) {
     .answer {
         padding: 1.2rem;
+        margin-top: 22px;
     }
     .answer__form-wrap {
         flex-wrap: wrap;

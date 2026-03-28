@@ -11,6 +11,7 @@
                         title="Классика"
                         description="Выбирай категории задач и решай их без ограничения по времени"
                         result-title="Решено задач:"
+                        :result="counters.counterClassic"
                         link="classic"
                     >
                     </Task>
@@ -22,8 +23,9 @@
                         :type-task-btn="false"
                         emoji="🫨​"
                         title="Блиц"
-                        description="Устанавливай новые рекорды, решая каждую задачу за 10 секунд"
+                        description="Устанавливай новые рекорды, решая каждую задачу за 15 секунд"
                         result-title="Рекорд:"
+                        :result="counters.counterBlitz"
                         link="blitz"
                     >
                     </Task>
@@ -37,6 +39,7 @@
                         title=" Марафон"
                         description="У тебя есть 2 минуты, реши как можно больше задач"
                         result-title="Рекорд:"
+                        :result="counters.counterMarathon"
                         link="marathon"
                     >
                     </Task>
@@ -46,7 +49,9 @@
     </PageWrap>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const counters = useCounters()
+</script>
 
 <style scoped lang="scss">
 .tasks {

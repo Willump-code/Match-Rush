@@ -29,7 +29,7 @@
 
             <div class="task__result">
                 <span class="task__result-title">{{ props.resultTitle }}</span>
-                <span class="task__result-count">12</span>
+                <span class="task__result-count">{{ props.result }}</span>
             </div>
         </div>
     </div>
@@ -43,6 +43,7 @@ const props = defineProps<{
     title: string;
     description: string;
     resultTitle: string;
+    result: number;
     link: "blitz" | "classic" | "marathon";
 }>();
 </script>

@@ -1,6 +1,6 @@
 <template>
     <PageWrap>
-        <div v-if="hasTask">
+        <div v-if="taskInfo">
             <PlaceQuestion
                 :title="taskInfo.title"
                 :size="taskInfo.sizeQuestion"
@@ -17,18 +17,19 @@
 </template>
 
 <script setup lang="ts">
+import type { TaskInfo } from "~/types";
 import generateRandomTask from "~/utils/tasks/generateRandomTask";
 import { allTaskMap } from "~/utils/tasks/tasksList/index";
+
 const selectedTasksStore = useCategoryTask();
 const randomTask = generateRandomTask(selectedTasksStore.selectedTasks);
-
-const taskInfo = ref();
-const hasTask = ref<boolean>(true);
+const taskInfo = ref<TaskInfo | null>();
 if (randomTask) {
     taskInfo.value = allTaskMap[randomTask]();
 } else {
-    hasTask.value = false;
+    taskInfo.value = null;
 }
+
 function giveAnswer(isCorrect: boolean) {
     if (isCorrect) {
         const newRandomTask = generateRandomTask(
@@ -37,7 +38,7 @@ function giveAnswer(isCorrect: boolean) {
         if (newRandomTask) {
             taskInfo.value = allTaskMap[newRandomTask]();
         } else {
-            hasTask.value = false;
+            taskInfo.value = null;
         }
     }
 }
