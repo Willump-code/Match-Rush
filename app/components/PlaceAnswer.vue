@@ -6,6 +6,7 @@
                     <input
                         class="answer__input"
                         type="number"
+                        step="any"
                         v-model="answer"
                     />
                     <PrimaryBtn type="submit" class="answer__btn" :size="'M'"

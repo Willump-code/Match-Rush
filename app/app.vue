@@ -7,5 +7,6 @@
             </div>
         </main>
         <HamburgerMenu></HamburgerMenu>
+        <PopUpCategoryTask></PopUpCategoryTask>
     </div>
 </template>

@@ -12,11 +12,19 @@
             <p class="task__description">
                 {{ props.description }}
             </p>
+
             <PrimaryBtn
-                :size="size"
-                @click="$router.push(`tasks/${props.link}`)"
+                :size="'M'"
+                @click="$router.push(`/tasks/${props.link}`)"
                 class="task__btn"
                 >Решать</PrimaryBtn
+            >
+            <SecondaryBtn
+                v-if="typeTaskBtn"
+                :size="'M'"
+                @click="popUpCategoryTask.isOpen = true"
+                class="task__btn"
+                >Настройки</SecondaryBtn
             >
 
             <div class="task__result">
@@ -28,18 +36,9 @@
 </template>
 
 <script setup lang="ts">
-const size = ref<"S" | "M" | "L">("M");
-function changeSize() {
-    if (window.innerWidth > 767) {
-        size.value = "M";
-    } else {
-        size.value = "L";
-    }
-}
-onMounted(() => {
-    changeSize();
-});
+const popUpCategoryTask = usePopUpCategoryTask();
 const props = defineProps<{
+    typeTaskBtn: boolean;
     emoji: string;
     title: string;
     description: string;
@@ -59,7 +58,7 @@ const props = defineProps<{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 1.2rem;
     }
     &__title-wrap {
         display: flex;
@@ -78,6 +77,9 @@ const props = defineProps<{
         color: $text-color3;
         text-align: center;
         font-size: clamp(0.7rem, 2.1vw, 1.3rem);
+    }
+    &__btn {
+        width: 80%;
     }
     &__result {
         display: flex;
@@ -107,6 +109,9 @@ const props = defineProps<{
         }
         &__description {
             font-size: 1.3rem;
+        }
+        &__btn {
+            font-size: 1.2rem;
         }
         &__result {
             &-title {
