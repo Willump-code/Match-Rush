@@ -5,7 +5,7 @@ export const useCounters = defineStore('counters', () => {
     const counterMarathon = ref(0);
 
     return { counterClassic, counterBlitz, counterMarathon };
-
+    
 }, {
     persist: true
 });
