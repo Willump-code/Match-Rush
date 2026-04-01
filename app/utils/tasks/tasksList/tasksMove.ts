@@ -27,13 +27,13 @@ export default () => {
     switch (whatFind) {
         case "s":
             v = Math.floor(randomNumbers1 * 100);
-            t = Math.floor(randomNumbers2 * 100);
+            t = Math.floor(randomNumbers2 * 20);
             s = v * t;
             taskInfo.question = `Автомобиль ехал со скоростью ${v} км/ч в течение ${t} ч. Найди пройденное расстояние(км).`;
             taskInfo.answer = `${s}`;
             break;
         case "v":
-            t = Math.floor(randomNumbers1 * 100);
+            t = Math.floor(randomNumbers1 * 20);
             s = t * Math.floor(randomNumbers2 * 100);
             v = s / t;
             taskInfo.question = `Автомобиль проехал ${s} км за ${t} ч. Найди скорость автомобиля(км/ч).`;
@@ -41,7 +41,7 @@ export default () => {
             break;
         case "t":
             v = Math.floor(randomNumbers1 * 100);
-            s = v * Math.floor(randomNumbers2 * 100);
+            s = v * Math.floor(randomNumbers2 * 20);
             t = s / v;
             taskInfo.question = `Автомобиль движется со скоростью ${v} км/ч и должен проехать ${s} км. Найди время движения(ч).`;
             taskInfo.answer = `${t}`;

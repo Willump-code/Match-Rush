@@ -60,16 +60,20 @@ function giveAnswer(isCorrect: boolean) {
 // работа таймера
 const time = ref<number>(15_000);
 let timeInterval: number;
+let start = 0;
+
 function startTimer() {
-    time.value = 15_000;
+    start = Date.now();
     clearInterval(timeInterval);
+
     timeInterval = setInterval(() => {
-        console.log(time.value);
-        time.value -= 10;
+        const passed = Date.now() - start;
+        time.value = 15_000 - passed;
     }, 10);
 }
 watch(time, (val) => {
     if (val <= 0) {
+        clearInterval(timeInterval)
         endGame();
     }
 });
