@@ -20,8 +20,10 @@
 import type { TaskInfo } from "~/types";
 import generateRandomTask from "~/utils/tasks/generateRandomTask";
 import { allTaskMap } from "~/utils/tasks/tasksList/index";
-
 const selectedTasksStore = useCategoryTask();
+const counterClassic = useCounters();
+
+// генерация задач
 const randomTask = generateRandomTask(selectedTasksStore.selectedTasks);
 const taskInfo = ref<TaskInfo | null>();
 if (randomTask) {
@@ -30,8 +32,10 @@ if (randomTask) {
     taskInfo.value = null;
 }
 
+// дан ответ
 function giveAnswer(isCorrect: boolean) {
     if (isCorrect) {
+        counterClassic.counterClassic += 1;
         const newRandomTask = generateRandomTask(
             selectedTasksStore.selectedTasks,
         );

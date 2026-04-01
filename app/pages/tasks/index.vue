@@ -37,7 +37,7 @@
                         :type-task-btn="false"
                         emoji="😰​"
                         title=" Марафон"
-                        description="У тебя есть 2 минуты, реши как можно больше задач"
+                        description="У тебя есть 3 минуты, реши как можно больше задач"
                         result-title="Рекорд:"
                         :result="counters.counterMarathon"
                         link="marathon"

@@ -28,6 +28,8 @@ import type { CategoryTask, TaskInfo } from "~/types";
 import generateRandomTask from "~/utils/tasks/generateRandomTask";
 import { allTasksList } from "~/utils/tasks/tasksList";
 import { allTaskMap } from "~/utils/tasks/tasksList";
+const maxCounter = useCounters();
+const popUpStore = usePopUpEndGame();
 
 // генерация задач
 const taskIdList = ref<CategoryTask[]>([]);
@@ -84,9 +86,8 @@ const counter = ref<number>(0);
 
 // поражение
 function endGame() {
-    alert("Время оконченно");
     clearInterval(timeInterval);
-    const maxCounter = useCounters();
+    popUpStore.isOpen = true;
     if (counter.value > maxCounter.counterMarathon) {
         maxCounter.counterMarathon = counter.value;
     }

@@ -34,7 +34,7 @@
                         @click="popUpStore.isOpen = false"
                         class="popup__close"
                     >
-                        <img src="@/assets/img/close-popup.png" alt="" />
+                        <img src="@/assets/img/close-popup.png" alt="img" />
                     </button>
                 </div>
             </div>

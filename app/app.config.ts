@@ -12,9 +12,5 @@ export default defineAppConfig({
             idPage: '/achieves',
             nameTab: 'Достижения',
         },
-        {
-            idPage: '/about',
-            nameTab: 'Обо мне',
-        },
     ]
 });

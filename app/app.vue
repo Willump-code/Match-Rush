@@ -8,5 +8,6 @@
         </main>
         <HamburgerMenu></HamburgerMenu>
         <PopUpCategoryTask></PopUpCategoryTask>
+        <PopUpEndGame></PopUpEndGame>
     </div>
 </template>
