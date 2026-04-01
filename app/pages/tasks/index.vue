@@ -50,6 +50,7 @@
 </template>
 
 <script setup lang="ts">
+
 const counters = useCounters()
 </script>
 
