@@ -5,4 +5,7 @@ export interface TaskInfo {
     sizeQuestion: "S" | "M" | "L";
 }
 
-export type CategoryTask = 'operationsWithNumbers' | 'convertValue' | 'tasksMove';
+export type CategoryTask =
+    | "operationsWithNumbers"
+    | "convertValue"
+    | "tasksMove";

@@ -2,12 +2,14 @@ import operationsWithNumbers from "~/utils/tasks/tasksList/operationsWithNumbers
 import tasksMove from "~/utils/tasks/tasksList/tasksMove";
 import convertValue from "~/utils/tasks/tasksList/convertValue";
 import subsequence from "./subsequence";
+import tasksProbability from "./tasksProbability";
 
 export const allTaskMap = {
     operationsWithNumbers,
     tasksMove,
     convertValue,
     subsequence,
+    tasksProbability,
 };
 export const allTasksList = [
     {
@@ -26,8 +28,13 @@ export const allTasksList = [
         emoji: "🚗",
     },
     {
+        id: "tasksProbability",
+        name: "Задачи на вероятность",
+        emoji: "🎲",
+    },
+    {
         id: 'subsequence',
-        name: "Продолжить последовательность",
+        name: "Последовательность",
         emoji: "👫🏽",
     }
 

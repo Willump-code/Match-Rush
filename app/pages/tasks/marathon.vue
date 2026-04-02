@@ -28,8 +28,9 @@ import type { CategoryTask, TaskInfo } from "~/types";
 import generateRandomTask from "~/utils/tasks/generateRandomTask";
 import { allTasksList } from "~/utils/tasks/tasksList";
 import { allTaskMap } from "~/utils/tasks/tasksList";
-const maxCounter = useCounters();
+const counterStore = useCounters();
 const popUpStore = usePopUpEndGame();
+const achieveStore = useAchieves();
 
 // генерация задач
 const taskIdList = ref<CategoryTask[]>([]);
@@ -73,7 +74,7 @@ function startTimer() {
 }
 watch(time, (val) => {
     if (val <= 0) {
-        clearInterval(timeInterval)
+        clearInterval(timeInterval);
         endGame();
     }
 });
@@ -88,9 +89,30 @@ const counter = ref<number>(0);
 function endGame() {
     clearInterval(timeInterval);
     popUpStore.isOpen = true;
-    if (counter.value > maxCounter.counterMarathon) {
-        maxCounter.counterMarathon = counter.value;
+
+    if (counter.value > counterStore.counterMarathon) {
+        counterStore.counterMarathon = counter.value;
     }
+
+    if (
+        counterStore.counterMarathon >= 5 &&
+        !achieveStore.finishedAchieves.includes("marathon5")
+    ) {
+        achieveStore.finishedAchieves.push("marathon5");
+    }
+    if (
+        counterStore.counterMarathon >= 12 &&
+        !achieveStore.finishedAchieves.includes("marathon12")
+    ) {
+        achieveStore.finishedAchieves.push("marathon12");
+    }
+    if (
+        counterStore.counterMarathon >= 20 &&
+        !achieveStore.finishedAchieves.includes("marathon20")
+    ) {
+        achieveStore.finishedAchieves.push("marathon20");
+    }
+
     counter.value = 0;
 }
 </script>

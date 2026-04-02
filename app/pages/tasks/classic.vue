@@ -21,7 +21,8 @@ import type { TaskInfo } from "~/types";
 import generateRandomTask from "~/utils/tasks/generateRandomTask";
 import { allTaskMap } from "~/utils/tasks/tasksList/index";
 const selectedTasksStore = useCategoryTask();
-const counterClassic = useCounters();
+const counterStore = useCounters();
+const achieveStore = useAchieves();
 
 // генерация задач
 const randomTask = generateRandomTask(selectedTasksStore.selectedTasks);
@@ -35,7 +36,25 @@ if (randomTask) {
 // дан ответ
 function giveAnswer(isCorrect: boolean) {
     if (isCorrect) {
-        counterClassic.counterClassic += 1;
+        counterStore.counterClassic += 1;
+        if (
+            counterStore.counterClassic >= 5 &&
+            !achieveStore.finishedAchieves.includes("classic5")
+        ) {
+            achieveStore.finishedAchieves.push("classic5");
+        }
+        if (
+            counterStore.counterClassic >= 20 &&
+            !achieveStore.finishedAchieves.includes("classic20")
+        ) {
+            achieveStore.finishedAchieves.push("classic20");
+        }
+        if (
+            counterStore.counterClassic >= 100 &&
+            !achieveStore.finishedAchieves.includes("classic100")
+        ) {
+            achieveStore.finishedAchieves.push("classic100");
+        }
         const newRandomTask = generateRandomTask(
             selectedTasksStore.selectedTasks,
         );

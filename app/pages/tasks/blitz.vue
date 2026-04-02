@@ -28,8 +28,9 @@ import type { CategoryTask, TaskInfo } from "~/types";
 import generateRandomTask from "~/utils/tasks/generateRandomTask";
 import { allTasksList } from "~/utils/tasks/tasksList";
 import { allTaskMap } from "~/utils/tasks/tasksList";
-const maxCounter = useCounters();
+const counterStore = useCounters();
 const popUpStore = usePopUpEndGame();
+const achieveStore = useAchieves();
 
 // генерация задач
 const taskIdList = ref<CategoryTask[]>([]);
@@ -90,9 +91,31 @@ const counter = ref<number>(0);
 function endGame() {
     clearInterval(timeInterval);
     popUpStore.isOpen = true;
-    if (counter.value > maxCounter.counterBlitz) {
-        maxCounter.counterBlitz = counter.value;
+
+    if (counter.value > counterStore.counterBlitz) {
+        counterStore.counterBlitz = counter.value;
     }
+    
+    if (
+        counterStore.counterBlitz >= 3 &&
+        !achieveStore.finishedAchieves.includes("blitz3")
+    ) {
+        achieveStore.finishedAchieves.push("blitz3");
+    }
+    if (
+        counterStore.counterBlitz >= 8 &&
+        !achieveStore.finishedAchieves.includes("blitz8")
+    ) {
+        achieveStore.finishedAchieves.push("blitz8");
+    }
+    if (
+        counterStore.counterBlitz >= 15 &&
+        !achieveStore.finishedAchieves.includes("blitz15")
+    ) {
+        achieveStore.finishedAchieves.push("blitz15");
+    }
+
+    
     counter.value = 0;
 }
 </script>
