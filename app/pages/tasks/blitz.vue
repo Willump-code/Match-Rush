@@ -95,7 +95,7 @@ function endGame() {
     if (counter.value > counterStore.counterBlitz) {
         counterStore.counterBlitz = counter.value;
     }
-    
+
     if (
         counterStore.counterBlitz >= 3 &&
         !achieveStore.finishedAchieves.includes("blitz3")
@@ -115,7 +115,6 @@ function endGame() {
         achieveStore.finishedAchieves.push("blitz15");
     }
 
-    
     counter.value = 0;
 }
 </script>

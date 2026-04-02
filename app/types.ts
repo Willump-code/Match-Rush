@@ -8,4 +8,6 @@ export interface TaskInfo {
 export type CategoryTask =
     | "operationsWithNumbers"
     | "convertValue"
-    | "tasksMove";
+    | "tasksMove"
+    | "tasksProbability"
+    | "subsequence";

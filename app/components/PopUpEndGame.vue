@@ -1,7 +1,7 @@
 <template>
     <Transition name="popup-shadow">
         <div
-            @click="$router.push(`/tasks/`), popUpStore.isOpen = false"
+            @click="($router.push(`/tasks/`), (popUpStore.isOpen = false))"
             v-if="popUpStore.isOpen"
             class="popup__shadow"
         ></div>
@@ -10,11 +10,11 @@
     <div class="popup__content">
         <Transition name="popup-content">
             <div v-if="popUpStore.isOpen" class="popup__block">
-                <h1 class="title">
-                    Время окончено
-                </h1>
+                <h1 class="title">Время окончено</h1>
                 <button
-                    @click="$router.push(`/tasks/`), popUpStore.isOpen = false"
+                    @click="
+                        ($router.push(`/tasks/`), (popUpStore.isOpen = false))
+                    "
                     class="popup__close"
                 >
                     <img src="@/assets/img/close-popup.png" alt="img" />
@@ -25,8 +25,7 @@
 </template>
 
 <script setup lang="ts">
-const popUpStore = usePopUpEndGame()
-
+const popUpStore = usePopUpEndGame();
 </script>
 
 <style scoped lang="scss">

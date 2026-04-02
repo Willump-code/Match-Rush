@@ -33,9 +33,8 @@ export const allTasksList = [
         emoji: "🎲",
     },
     {
-        id: 'subsequence',
+        id: "subsequence",
         name: "Последовательность",
         emoji: "👫🏽",
-    }
-
+    },
 ] as const;

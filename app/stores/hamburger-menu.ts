@@ -1,5 +1,5 @@
-export const useHamburgerMenu = defineStore('hamburger-menu', ()=>{
-    const isOpen = ref<boolean>(false)
+export const useHamburgerMenu = defineStore("hamburger-menu", () => {
+    const isOpen = ref<boolean>(false);
 
-    return {isOpen}
-})
+    return { isOpen };
+});

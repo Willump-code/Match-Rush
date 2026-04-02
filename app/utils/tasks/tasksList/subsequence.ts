@@ -17,14 +17,14 @@ export default () => {
     };
 
     switch (sign) {
-        case "+":{
+        case "+": {
             const start = Math.floor(Math.random() * 100);
             const step = Math.floor(Math.random() * 100);
             taskInfo.answer = `${start + 3 * step}`;
             taskInfo.question = `${start} - ${start + step} - ${start + 2 * step} - ?`;
             break;
         }
-        case "*":{
+        case "*": {
             const start = Math.floor(Math.random() * 10);
             const step = Math.floor(Math.random() * 10 + 1);
             taskInfo.answer = `${start * step * step * step}`;

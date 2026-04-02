@@ -4,9 +4,9 @@ export default () => {
     const randomNumbersForType = Math.random();
     let type: "typeBall" | "typeCart";
     if (randomNumbersForType > 0.5) {
-        type = 'typeBall';
+        type = "typeBall";
     } else {
-        type = 'typeCart';
+        type = "typeCart";
     }
 
     const taskInfo: TaskInfo = {

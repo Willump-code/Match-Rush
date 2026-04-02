@@ -3,7 +3,7 @@ import type { CategoryTask } from "~/types";
 
 export const useCategoryTask = defineStore("category", () => {
     let selectedTasks = <CategoryTask[]>[];
-    resetSelectedTasks()
+    resetSelectedTasks();
     function resetSelectedTasks() {
         for (const i of allTasksList) {
             if (!selectedTasks.includes(i.id)) {

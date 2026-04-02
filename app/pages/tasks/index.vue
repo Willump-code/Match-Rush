@@ -50,7 +50,7 @@
 </template>
 
 <script setup lang="ts">
-const counters = useCounters()
+const counters = useCounters();
 </script>
 
 <style scoped lang="scss">

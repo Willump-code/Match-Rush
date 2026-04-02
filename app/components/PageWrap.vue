@@ -6,11 +6,10 @@
     </AnimationMountedWrap>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
-    .wrap{
-        margin: 100px 0;
-    }
+.wrap {
+    margin: 100px 0;
+}
 </style>
