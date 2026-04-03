@@ -1,0 +1,1 @@
+import{j as o,o as t,c as a,x as c,y as _,_ as r}from"./DK3MWdhc.js";const p=o({__name:"SecondaryBtn",props:{size:{}},setup(e){const s=e;return(n,l)=>(t(),a("button",{class:c(["btn",`${s.size}`])},[_(n.$slots,"default",{},void 0)],2))}}),d=Object.assign(r(p,[["__scopeId","data-v-f185556f"]]),{__name:"SecondaryBtn"});export{d as _};

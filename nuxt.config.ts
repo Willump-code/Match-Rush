@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+    ssr: false,
     devtools: { enabled: true },
     modules: ['@pinia/nuxt'],
     css: ['@/assets/scss/main.scss'],
@@ -12,6 +13,7 @@ export default defineNuxtConfig({
         }
     },
     app: {
+        baseURL: '/Match-Rush/',
         head: {
             title: 'Математический тренажёр | MathRush',
             meta: [
