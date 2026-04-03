@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     modules: ['@pinia/nuxt'],
     css: ['@/assets/scss/main.scss'],
     vite: {
+        base:'/Match-Rush/',
         css: {
             preprocessorOptions: {
                 scss: {
@@ -27,5 +28,5 @@ export default defineNuxtConfig({
                 { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap' },
             ]
         }
-    }
+    },
 });
